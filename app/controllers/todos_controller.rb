@@ -2,6 +2,7 @@ class TodosController < ApplicationController
   def index
     # find all todos
     @todos = Todo.all
+    @todos = Todo.order(created_at: :desc)
     render json: {todos: @todos}
   end
 
